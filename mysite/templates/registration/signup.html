@@ -1,0 +1,61 @@
+{% extends 'product/base.html' %}
+{% load static %}
+{% block title %}SignUp{% endblock %}
+
+{% block content %}
+
+    <!-- Start All Title Box -->
+    <div class="all-title-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2>Sign Up</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End All Title Box -->
+
+    <!-- Start Cart  -->
+    <div class="cart-box-main">
+        <div class="container">
+            <div class="row new-account-login">
+                <div class="col-sm-12 col-lg-12 mb-12">
+                    <div class="title-left">
+                        <h3>Create New Account</h3>
+                    </div>
+                    <h5><a data-toggle="collapse" href="#formRegister" role="button" aria-expanded="false">Click here to
+                        Register</a></h5>
+                    <form class="mt-12 collapse review-form-box" id="formRegister" method="post">
+                        {% csrf_token %}
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="InputName" class="mb-0">Username</label>
+                                <input type="text" name="username" class="form-control" id="InputName" placeholder="Username" required></div>
+                            <div class="form-group col-md-6">
+                                <label for="InputEmail1" class="mb-0">Email Address</label>
+                                <input type="email" name="email" class="form-control" id="InputEmail1" placeholder="Enter Email" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputPassword1" class="mb-0">Password1</label>
+                                <input type="password" name="password1" class="form-control" id="InputPassword1" placeholder="Your password must contain at least 8 characters" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputPassword2" class="mb-0">Password2</label>
+                                <input type="password" name="password2" class="form-control" id="InputPassword2" placeholder="Your password must contain at least 8 characters" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="InputName" class="mb-0">Phone</label>
+                                <input type="text" name="phone" class="form-control" id="InputName" placeholder="Phone" required></div>
+                        </div>
+                        <button type="submit" class="btn hvr-bounce-to-bottom">Register</button>
+                    </form>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!-- End Cart -->
+
+{% endblock %}

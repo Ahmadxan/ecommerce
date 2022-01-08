@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>{% block title %}{% endblock %}</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="{% static 'product/images/favicon.ico' %}" type="image/x-icon">
+    <link rel="apple-touch-icon" href="{% static 'product/images/apple-touch-icon.png' %}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'product/css/bootstrap.min.css' %}">
+    <!-- Site CSS -->
+    <link rel="stylesheet" href="{% static 'product/css/style.css' %}">
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" href="{% static 'product/css/responsive.css' %}">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'product/css/custom.css' %}">
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Start Main Top -->
+<div class="main-top">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="text-slid-box">
+                    <div id="offer-box" class="carouselTicker">
+                        <ul class="offer-box">
+                            <li>
+                                <i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> Off 10%! Shop Now Man
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> 50% - 80% off on Fashion
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT20
+                            </li>
+                            <li>
+                                <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                <div class="right-phone-box">
+                    <p>Call US :- <a href="#"> +998 33 3202036</a></p>
+                </div>
+                <div class="our-link">
+                    <ul>
+                        {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout-page' %}">Logout</a></li>
+                            <li><a href="#">{{ user.username }}</a></li>
+                            {% else %}
+                            <li><a href="/login">Login</a></li>
+                            <li><a href="/user/create">SignUp</a></li>
+                        {% endif %}
+                        <li><a href="https://goo.gl/maps/ZacbXQFRQ62MdBP77">Our location</a></li>
+                        <li><a href="{% url 'my-order' %}">My Orders</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Top -->
+
+<!-- Start Main Top -->
+<header class="main-header">
+    <!-- Start Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light brand-center bg-light navbar-default bootsnav">
+        <div class="container">
+            <!-- Start Header Navigation -->
+            <div class="navbar-header">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="{% url 'home-page' %}"><img src="{% static 'product/images/logo.png' %}" class="logo"
+                                                               alt=""></a>
+            </div>
+            <!-- End Header Navigation -->
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="navbar-menu">
+                <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <li class="nav-item active"><a class="nav-link" href="{% url 'home-page' %}">Home</a></li>
+                    <li><a href="{% url 'my-order' %}">My Orders</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+
+            <!-- Start Atribute Navigation -->
+            <div class="attr-nav">
+                <ul>
+                    <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+{#                    <li class="dropdown">#}
+{#                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">#}
+{#                            <i class="fa fa-shopping-bag"></i>#}
+{#                            <span class="badge">3</span>#}
+{#                        </a>#}
+{#                        <ul class="dropdown-menu cart-list">#}
+{#                            <li>#}
+{#                                <a href="#" class="photo"><img src="{% static 'product/images/img-pro-01.jpg' %}"#}
+{#                                                               class="cart-thumb" alt=""/></a>#}
+{#                                <h6><a href="#">Delica omtantur </a></h6>#}
+{#                                <p>1x - <span class="price">$10.00</span></p>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="photo"><img src="{% static 'product/images/img-pro-02.jpg' %}"#}
+{#                                                               class="cart-thumb" alt=""/></a>#}
+{#                                <h6><a href="#">Omnes ocurreret</a></h6>#}
+{#                                <p>1x - <span class="price">$20.00</span></p>#}
+{#                            </li>#}
+{#                            <li>#}
+{#                                <a href="#" class="photo"><img src="{% static 'product/images/img-pro-03.jpg' %}"#}
+{#                                                               class="cart-thumb" alt=""/></a>#}
+{#                                <h6><a href="#">Agam facilisis</a></h6>#}
+{#                                <p>1x - <span class="price">$30.00</span></p>#}
+{#                            </li>#}
+{#                            <li class="total">#}
+{#                                <span class="float-right"><strong>Total</strong>: $60.00</span>#}
+{#                                <a href="#" class="btn btn-default hvr-bounce-to-bottom btn-cart">VIEW CART</a>#}
+{#                            </li>#}
+{#                        </ul>#}
+{#                    </li>#}
+                </ul>
+            </div>
+            <!-- End Atribute Navigation -->
+        </div>
+    </nav>
+    <!-- End Navigation -->
+</header>
+<!-- End Main Top -->
+
+<!-- Start Top Search -->
+<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+        </div>
+    </div>
+</div>
+<!-- End Top Search -->
+
+{% block content %}
+
+{% endblock %}
+<!-- Start info shop  -->
+<div class="info-box">
+    <div class="container">
+        <div class="row no-gutters">
+            <div class="col-sm-6 col-lg-3">
+                <div class="media service-block">
+                    <div class="service-block-icon"><i class="fas fa-truck"></i></div>
+                    <div class="media-body">
+                        <h6>FREE SHIPPING &amp; RETURN</h6>
+                        <div class="service-block-desc">Get free shipping for all orders $99 or more</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="media service-block">
+                    <div class="service-block-icon"><i class="fas fa-sync-alt"></i></div>
+                    <div class="media-body">
+                        <h6>MONEY BACK GUARANTEE</h6>
+                        <div class="service-block-desc">Get the item you ordered, or your money back</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="media service-block">
+                    <div class="service-block-icon"><i class="fas fa-shield-alt"></i></div>
+                    <div class="media-body">
+                        <h6>100% SECURE PAYMENT</h6>
+                        <div class="service-block-desc">Your transaction are secure with SSL Encryption</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <div class="media service-block">
+                    <div class="service-block-icon"><i class="fas fa-phone"></i></div>
+                    <div class="media-body">
+                        <h6>ONLINE SUPPORT 24/7</h6>
+                        <div class="service-block-desc">Chat with experts or have us call you right away</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End info shop  -->
+
+<!-- Start Footer  -->
+<footer>
+    <div class="footer-main">
+        <div class="container">
+            <div class="row">
+
+                <aside class="col-lg-3 col-sm-6 white">
+                    <h5 class="title">My Account</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/login/"> User Login </a></li>
+                        <li><a href="/user/create/"> User register </a></li>
+                        <li><a href="#"> Account Setting </a></li>
+                        <li><a href="{% url 'my-order' %}"> My Orders </a></li>
+                    </ul>
+                </aside>
+
+                <aside class="col-lg-3 col-sm-6">
+                    <article class="white">
+                        <h5 class="title">Contacts</h5>
+                        <p>
+                            <strong>Address: </strong> Donald M. Palmer 2595 Pearlman Avenue Sudbury, MA 01776 <br>
+                            <strong>Phone: </strong> +8834 56789 <br>
+                            <strong>Fax:</strong> +8834 56789
+                        </p>
+
+                        <div class="btn-group white">
+                            <a class="btn btn-facebook" title="Facebook" target="_blank" href="#"><i
+                                    class="fab fa-facebook-f  fa-fw"></i></a>
+                            <a class="btn btn-instagram" title="Instagram" target="_blank" href="#"><i
+                                    class="fab fa-instagram  fa-fw"></i></a>
+                            <a class="btn btn-youtube" title="Youtube" target="_blank" href="#"><i
+                                    class="fab fa-youtube  fa-fw"></i></a>
+                            <a class="btn btn-twitter" title="Twitter" target="_blank" href="#"><i
+                                    class="fab fa-twitter  fa-fw"></i></a>
+                        </div>
+                    </article>
+                </aside>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- End Footer  -->
+
+<!-- Start copyright  -->
+<div class="footer-copyright">
+    <p class="footer-company">All Rights Reserved. &copy; 2018 <a href="#">IGTU Electronics</a> Design By :
+        <a href="https://html.design/">html design</a></p>
+</div>
+<!-- End copyright  -->
+
+<a href="#" id="back-to-top" title="Back to top" style="display: none;"><i class="fas fa-angle-double-up"></i></a>
+
+<div class="modal fade product_view" id="product_view">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Lorem ipsum dolor sit amet</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6 product_img">
+                        <img src="{% static 'product/images/product/product-dc-01.jpg' %}" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 product_content">
+                        <h4>Product Id: <span>51526</span></h4>
+                        <div class="rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            (10 reviews)
+                        </div>
+                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.Lorem Ipsum is simply dummy
+                            text of the printing and typesetting industry.</p>
+                        <h3 class="cost">$75.00
+                            <del class="price-old">$90.00</del>
+                        </h3>
+                        <div class="row mb-4">
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <select class="form-control" name="select">
+                                    <option value="" selected="">Color</option>
+                                    <option value="black">Black</option>
+                                    <option value="white">White</option>
+                                    <option value="gold">Gold</option>
+                                    <option value="rose gold">Rose Gold</option>
+                                </select>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <select class="form-control" name="select">
+                                    <option value="">Capacity</option>
+                                    <option value="">16GB</option>
+                                    <option value="">32GB</option>
+                                    <option value="">64GB</option>
+                                    <option value="">128GB</option>
+                                </select>
+                            </div>
+                            <!-- end col -->
+                            <div class="col-md-4 col-sm-12">
+                                <select class="form-control" name="select">
+                                    <option value="" selected="">QTY</option>
+                                    <option value="">1</option>
+                                    <option value="">2</option>
+                                    <option value="">3</option>
+                                </select>
+                            </div>
+                            <!-- end col -->
+                        </div>
+
+                        <div class="btn-ground">
+                            <button type="button" class="btn hvr-bounce-to-bottom"><span
+                                    class="glyphicon glyphicon-shopping-cart"></span> Add To Cart
+                            </button>
+                            <button type="button" class="btn hvr-bounce-to-bottom"><span
+                                    class="glyphicon glyphicon-heart"></span> Add To Wishlist
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ALL JS FILES -->
+<script src="{% static 'product/js/jquery-3.2.1.min.js' %}"></script>
+<script src="{% static 'product/js/popper.min.js' %}"></script>
+<script src="{% static 'product/js/bootstrap.min.js' %}"></script>
+<!-- ALL PLUGINS -->
+<script src="{% static 'product/js/jquery.superslides.min.js' %}"></script>
+<script src="{% static 'product/js/bootstrap-select.js' %}"></script>
+<script src="{% static 'product/js/inewsticker.js' %}"></script>
+<script src="{% static 'product/js/bootsnav.js' %}"></script>
+<script src="{% static 'product/js/images-loded.min.js' %}"></script>
+<script src="{% static 'product/js/isotope.min.js' %}"></script>
+<script src="{% static 'product/js/owl.carousel.min.js' %}"></script>
+<script src="{% static 'product/js/baguetteBox.min.js' %}"></script>
+<script src="{% static 'product/js/form-validator.min.js' %}"></script>
+<script src="{% static 'product/js/contact-form-script.js' %}"></script>
+<script src="{% static 'product/js/custom.js' %}"></script>
+</body>
+
+</html>
